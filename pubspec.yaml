@@ -1,0 +1,59 @@
+name: smartmeds
+description: SmartMeds - Personal Medicine Management Companion
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  supabase_flutter: ^2.5.6
+  flutter_riverpod: ^2.5.1
+  cupertino_icons: ^1.0.6
+  intl: ^0.19.0
+  flutter_local_notifications: ^17.2.3
+  timezone: ^0.9.4
+  pdf: ^3.10.8
+  printing: ^5.12.0
+  share_plus: ^7.2.2
+  path_provider: ^2.1.3
+  image_picker: ^1.1.2
+  uuid: ^4.4.0
+  shared_preferences: ^2.2.3
+  flutter_tts: ^4.0.2
+  fl_chart: ^0.68.0
+  connectivity_plus: ^6.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.1
+  flutter_native_splash: ^2.4.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#0D3B8C"
+  adaptive_icon_foreground: "assets/icon/app_icon.png"
+
+# Native splash covers the brief moment before Flutter itself has booted
+# (before any Dart code, including animations, can run) — it can only
+# show a STATIC image, no animation. The actual animated logo entrance
+# happens immediately after, in lib/features/splash/ — see main.dart.
+flutter_native_splash:
+  color: "#0D3B8C"
+  image: "assets/icon/app_icon.png"
+  android_12:
+    color: "#0D3B8C"
+    image: "assets/icon/app_icon.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icon/
+    - assets/logo/
