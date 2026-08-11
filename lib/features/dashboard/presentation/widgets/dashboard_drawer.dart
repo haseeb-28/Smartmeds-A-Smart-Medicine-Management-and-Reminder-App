@@ -37,11 +37,13 @@ class DashboardDrawer extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Icon(Icons.medication_liquid,
-                      size: 36, color: Theme.of(context).colorScheme.primary),
-                  const SizedBox(height: 8),
-                  const Text('SmartMeds',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                  Image.asset(
+                    'assets/logo/app_logo.png',
+                    height: 72,
+                    errorBuilder: (_, __, ___) => Icon(Icons.medication_liquid,
+                        size: 36, color: Theme.of(context).colorScheme.primary),
+                  ),
+                  const SizedBox(height: 10),
                   Text(userEmail, style: TextStyle(color: Colors.grey[600], fontSize: 13)),
                 ],
               ),

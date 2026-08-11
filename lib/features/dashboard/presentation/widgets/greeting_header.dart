@@ -14,39 +14,24 @@ class GreetingHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '$_greeting, $userName',
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+        Text(
+          '$_greeting, $userName',
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.bold,
               ),
-              const SizedBox(height: 2),
-              Text(
-                "Here's how today looks",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium
-                    ?.copyWith(color: Colors.grey[600]),
-              ),
-            ],
-          ),
         ),
-        const SizedBox(width: 12),
-        CircleAvatar(
-          radius: 22,
-          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-          child: Text(
-            userName.isNotEmpty ? userName[0].toUpperCase() : '?',
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
+        const SizedBox(height: 2),
+        Text(
+          "Here's how today looks",
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium
+              ?.copyWith(color: Colors.grey[600]),
         ),
       ],
     );

@@ -24,9 +24,8 @@ class AnimatedBrandMark extends StatelessWidget {
         );
       },
       child: Image.asset(
-        'assets/icon/app_icon.png',
-        width: 28,
-        height: 28,
+        'assets/logo/app_logo.png',
+        height: 32,
         errorBuilder: (_, __, ___) => Icon(
           Icons.medication_liquid,
           size: 26,

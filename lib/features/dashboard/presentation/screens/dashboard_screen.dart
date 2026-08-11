@@ -10,8 +10,8 @@ import '../../../medicines/presentation/screens/medicine_list_screen.dart';
 import '../../../offline/presentation/widgets/offline_banner.dart';
 import '../../../progress/presentation/screens/daily_progress_screen.dart';
 import '../../../reminders/providers/reminder_provider.dart';
+import '../../data/dashboard_models.dart';
 import '../../providers/dashboard_provider.dart';
-import '../widgets/animated_brand_mark.dart';
 import '../widgets/dashboard_drawer.dart';
 import '../widgets/greeting_header.dart';
 import '../widgets/mini_calendar_strip.dart';
@@ -60,13 +60,18 @@ class DashboardScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: const Row(
-          children: [
-            AnimatedBrandMark(),
-            SizedBox(width: 10),
-            Text('SmartMeds'),
-          ],
+        leading: Builder(
+          builder: (context) => IconButton(
+            padding: const EdgeInsets.all(6),
+            icon: Image.asset(
+              'assets/logo/app_logo.png',
+              errorBuilder: (_, __, ___) => const Icon(Icons.menu),
+            ),
+            tooltip: 'Open menu',
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
         ),
+        title: const Text('SmartMeds'),
       ),
       drawer: const DashboardDrawer(),
       floatingActionButton: FloatingActionButton.extended(
